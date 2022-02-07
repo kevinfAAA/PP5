@@ -5,7 +5,19 @@ html {
 body {
     background: url('/media/landing-page.jpg') no-repeat center center fixed;
     background-size: cover;
-    height: calc(100vh - 164px);
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container-fluid {
+    padding: 0
+}
+
+.navbar-brand {
+    font-size: 30px;
+}
+
+.nav-link{
+    color: 	rgb(255,255,255) !important;
 }
 
 /* -------------------------------- Media Queries */

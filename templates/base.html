@@ -15,6 +15,7 @@
 
     {% block corecss %}
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,300&family=Open+Sans&display=swap">
         <link rel="stylesheet" href="{% static 'css/base.css' %}">
         {% endblock %} 
 
@@ -33,10 +34,10 @@
     <title>Kevs Fitness World {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <header class="container-fluid fixed-top">
-     <div class="topnav">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light mynav">
-        <a class="navbar-brand" href="#">Kevs Fitness World</a>
+    <header>
+    <div class="container-fluid w-100">
+      <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
+          <a class="navbar-brand" href="#">Kevs Fitness World</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -61,7 +62,7 @@
               <a class="nav-link" href="#">Blog <span class="sr-only">(current)</span></a>
             </li>
           </ul>
-          <ul class="navbar-nav mr-auto">
+          <ul class="navbar-nav ml-auto">
           
             {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
@@ -69,31 +70,26 @@
                   <a class="nav-link" href="#">Manage Content <span class="sr-only">(current)</span></a>
                 </li>
               {% endif %}  
-                <button type="button" class="btn btn-warning" href="{% url 'account_logout' %}">Logout</button>
+                <li class="nav-item active"></li>
+                  <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
+                </li>
+                <button type="button" class="btn btn-outline-warning" href="{% url 'account_logout' %}">Logout</button>
             {% else %}  
                 <li class="nav-item active">
                   <a class="nav-link" href="{% url 'account_signup' %}">Sign Up <span class="sr-only">(current)</span></a>
                 </li>
-                <button type="button" class="btn btn-success" href="{% url 'account_login' %}">Login</button>
+                <button type="button" class="btn btn-outline-success" href="{% url 'account_login' %}">Login</button>
             {% endif %}  
           </ul>
         </div>
       </nav>
-     </div>         
+     </div>        
     </header>
-
-    {% if messages %}
-        <div class="message-container"></div>
-    {% endif %}
-
-    {% block page_header %}
-    {% endblock %}
 
     {% block content %}
     {% endblock %}
 
-    {% block postloadjs %}
-    {% endblock %}
+
 
   </body>
 </html>
