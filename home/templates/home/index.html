@@ -8,13 +8,16 @@
                 <h1 class="text-white">
                     GET FIT! HAVE FUN! REPEAT!!
                 </h1>
-                <h2 class="text-white">
+                <h2 class="text-white d-none d-md-block">
                     One Membership, Tons of Workouts to Choose From.
                 </h2>
                 <div class="my-5">
+                    {% if request.user.is_authenticated %}
+                    {% else %}  
                     <h4>
-                        <a href="" class="text-white">Sign Up and Subscribe Today!!!!</a>
+                        <button type="button" class="btn btn-success btn-lg">Sign Up Today!!!!</button>
                     </h4>
+                    {% endif %}  
                 </div>
             </div>
         </div>

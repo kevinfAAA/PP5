@@ -9,16 +9,49 @@ body {
 }
 
 .container-fluid {
-    padding: 0
+    padding: 0px;
+    padding-right: 5px;
+}
+
+.navbar-nav .nav-item {
+    padding: 5px;
 }
 
 .navbar-brand {
     font-size: 30px;
+    padding: 5px;
 }
 
 .nav-link{
     color: 	rgb(255,255,255) !important;
 }
+
+.dropdown-menu {
+    background-color: black !important;
+    color: 	rgb(255,255,255) !important;
+}
+
+.dropdown-item a{
+    color: 	rgb(255,255,255) !important;
+}
+
+.dropdown-item:hover{
+    color: 	black !important;
+}
+
+.dropdown-item{
+    color: 	rgb(255,255,255) !important;
+}
+
+.navbar-nav a:hover {
+    text-decoration: underline;
+  }
+
+.navbar-toggler {
+    border-color: rgb(255,255,255) !important;
+    border: 2px solid transparent;
+}
+
 
 /* -------------------------------- Media Queries */
 
