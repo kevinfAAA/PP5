@@ -52,6 +52,18 @@ body {
     border: 2px solid transparent;
 }
 
+.overlay {
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	position: fixed;
+	background: rgb(0, 0, 0);
+	z-index: -1;
+}
 
-/* -------------------------------- Media Queries */
-
+.allauth-temps {
+    background-color: rgb(255,255,255, 0.8);
+    padding: 25px;
+    border-radius: 25px
+}

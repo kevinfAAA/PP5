@@ -66,19 +66,23 @@
           
             {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
-                <li class="nav-item active"></li>
-                  <a class="nav-link" href="#">Manage Content <span class="sr-only">(current)</span></a>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Manage Content</a>
                 </li>
               {% endif %}  
-                <li class="nav-item active"></li>
+                <li class="nav-item active">
                   <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
                 </li>
-                <button type="button" class="btn btn-outline-warning" href="{% url 'account_logout' %}">Logout</button>
+                <li class="nav-item active">
+                <a type="button" class="btn btn-outline-warning" href="{% url 'account_logout' %}">Logout</a>
+              </li>
             {% else %}  
                 <li class="nav-item active">
                   <a class="nav-link" href="{% url 'account_signup' %}">Sign Up <span class="sr-only">(current)</span></a>
                 </li>
-                <button type="button" class="btn btn-outline-success" href="{% url 'account_login' %}">Login</button>
+                <li class="nav-item active">
+                <a type="button" class="btn btn-outline-success" href="{% url 'account_login' %}">Login</a>
+              </li>
             {% endif %}  
           </ul>
         </div>
