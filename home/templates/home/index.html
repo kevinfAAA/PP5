@@ -15,6 +15,9 @@
                     {% if request.user.is_authenticated %}
                     {% else %}  
                     <h4>
+                        <a type="button" class="btn btn-success btn-lg" href="#">Check Out Our Classes</a>
+                    </h4>
+                    <h4>
                         <a type="button" class="btn btn-success btn-lg" href="{% url 'account_signup' %}">Sign Up Today!!!!</a>
                     </h4>
                     {% endif %}  

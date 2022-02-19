@@ -17,9 +17,12 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from videos import views as video_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('allauth.urls')),
     path('', include('home.urls')),
+    path('videos/', video_views.index, name='index'),
+    path('videos/', include('videos.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
