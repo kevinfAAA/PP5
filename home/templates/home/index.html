@@ -12,11 +12,11 @@
                     One Membership, Tons of Workouts to Choose From.
                 </h2>
                 <div class="my-5">
+                    <h4>
+                        <a type="button" class="btn btn-info btn-lg" href="{% url 'index' %}">Check Out Our Classes</a>
+                    </h4>
                     {% if request.user.is_authenticated %}
                     {% else %}  
-                    <h4>
-                        <a type="button" class="btn btn-success btn-lg" href="#">Check Out Our Classes</a>
-                    </h4>
                     <h4>
                         <a type="button" class="btn btn-success btn-lg" href="{% url 'account_signup' %}">Sign Up Today!!!!</a>
                     </h4>

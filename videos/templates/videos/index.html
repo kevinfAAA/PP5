@@ -2,5 +2,25 @@
 {% load static %}
 
 {% block content %}
-<h1>Video Content</h1>
-{% endblock %}
+	<div class="container mt-5">
+		<div class="row justify-content-center">
+			{% for object in object_list %}
+			<div class="card img-responsive">
+				<a href="{% url 'video-detail' object.pk %}"><img src="/media/{{ object.thumbnail }}" width="320" height="220"></a>
+				<div class="card-body">
+					<a type="button" class="btn btn-info btn-lg btn-block" href="{% url 'video-detail' object.pk %}"><h5 class="text-center">{{ object.title }}</h5></a>
+					<p class="info-text card-descrip m-0" style="height: 95px;"><strong>Description: </strong>{{ object.description }}</p>
+					<p class="text-center font-weight-bold m-0">Uploaded by:<strong class="text-success">{{ object.uploader }}</strong></p>
+					<p class="text-center font-weight-bold ">Uploaded:<strong class="text-success"> {{ object.date_posted | date:"M d, Y" }}</strong></p>
+					{% if request.user.is_superuser %}
+					<div class="text-center mt-3">
+					<a type="button" class="btn btn-outline-primary btn-sm" href="{% url 'video-update' object.pk %}">Edit <i class="fas fa-edit"></i></i></a>
+					<a type="button" class="btn btn-outline-danger btn-sm" href="{% url 'video-delete' object.pk %}">Delete <i class="fas fa-trash-alt"></i></i></a>
+					</div>
+					{% endif %} 
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+{% endblock content %}

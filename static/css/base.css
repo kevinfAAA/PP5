@@ -67,3 +67,47 @@ body {
     padding: 25px;
     border-radius: 25px
 }
+
+
+/*---- Content Page ----*/
+
+.card {
+    background-color: rgb(238, 238, 241);
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.card img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.card-descrip {
+    width: 250px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+  }
+
+
+/*---- video-player ----*/
+
+.video-player {
+    background-color: rgb(238, 238, 241);
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.video-descrip {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+  }
+
+
+
+/*---- Media Quires ----*/
+
+
