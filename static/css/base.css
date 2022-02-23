@@ -106,6 +106,9 @@ body {
     -webkit-box-orient: vertical;  
   }
 
+.sim-vids {
+    color: rgb(238, 238, 241);
+}
 
 
 /*---- Media Quires ----*/

@@ -59,12 +59,14 @@
             {% if request.user.is_authenticated %}
               {% if request.user.is_superuser %}
                 <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'video-create' %}">Manage Content</a>
+                  <a class="nav-link" href="{% url 'video-create' %}">Add Content</a>
                 </li>
               {% endif %}  
+              {% if not request.user.is_superuser %}
                 <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'profile' user.profile.pk %}"><img src="{{ user.profile.image.url }}" width="35" height="35" class="d-inline-block rounded-circle" alt="Profile"></a>
+                  <a class="nav-link" href="{% url 'profile' user.profile.pk %}">My Profile</a>
                 </li>
+              {% endif %} 
                 <li class="nav-item active">
                 <a type="button" class="btn btn-outline-warning" href="{% url 'account_logout' %}">Logout</a>
               </li>
