@@ -4,13 +4,14 @@
 {% block content %}
     <div class="container h-500 mt-5">
         <div class="row align-items-center">
-            <div class="col-5">
+            <div class="col-md-7 col-sm-12">
                 <h1 class="text-white">
-                    GET FIT! HAVE FUN! REPEAT!!
+                    GET FIT-HAVE FUN-REPEAT
                 </h1>
                 <h2 class="text-white d-none d-md-block">
-                    One Membership, Tons of Workouts to Choose From.
+                    One Membership
                 </h2>
+                <h2 class="text-white d-none d-md-block">Tons of Workouts to Choose From</h2>
                 <div class="my-5">
                     <h4>
                         <a type="button" class="btn btn-info btn-lg" href="{% url 'index' %}">Check Out Our Classes</a>
@@ -24,5 +25,15 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="footer-basic sticky-bottom text-center mt-2">
+        <footer>
+            <div class="social"><a href="#"><i class="fab fa-instagram-square"></i></a>
+              <a href="#"><i class="fab fa-twitter-square"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="copyright">Kevs Fitness World © 2022</p>
+        </footer>
     </div>
 {% endblock %}

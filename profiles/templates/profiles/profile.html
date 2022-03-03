@@ -19,19 +19,14 @@
         </div>
     </div>
 
-    <!-- this is currently not working
-        seems to be a problem with the for loop
-        neds to be fixed
-    -->
-
     <div class="row justify-content-center my-5">
         {% for video in videos %}
-        <div class="card col-md-3 col-sm-12 col-xs-12 p-3 shadow mr-md-3 my-3">
-            <img src="{{ video.thumbnail.url }}" class="card-img-top pt-2" alt="thumbnail">
+        <div class="card img-responsive">
+            <a href="{% url 'video-detail' video.pk %}"><img src="{{ video.thumbnail.url }}" class="img-fluid" alt="thumbnail" width="256" height="144"></a>
                 <div class="card-body">
-                    <h5 class="card-title text-center">{{ video.title }}</h5>
-                    <p class="card-text text-muted text-center"><span class="mr-4">{{ video.uploader }}</span><span>{{ video.date_posted | date:"M d, Y" }}</span></p>
-                    <a href="{% url 'video-detail' video.pk %}" class="stretched-link"></a>
+                    <h5 class="text-center">{{ video.title }}</h5>
+                    <p class="text-center font-weight-bold m-0"><span class="mr-4">{{ video.uploader }}</span></p>
+                    <p class="text-center font-weight-bold"><span class="mr-4">{{ video.date_posted | date:"M d, Y" }}</span></p>
                 </div>
         </div>
         {% endfor %}

@@ -1,5 +1,6 @@
 html {
-    height: 100%
+    height: 100%;
+    
 }
 
 body {
@@ -68,6 +69,47 @@ body {
     border-radius: 25px
 }
 
+/* ------ Footer ------*/
+
+.footer-basic {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    bottom: 0;
+}
+  
+
+.footer-basic .social {
+   text-align: center;
+   padding-bottom: 25px;
+}
+  
+.footer-basic .social > a {
+   font-size: 24px;
+   width: 40px;
+   height: 40px;
+   line-height: 40px;
+   display: inline-block;
+   text-align: center;
+   border-radius: 50%;
+   border: 2px solid #ccc;
+   margin: 0 8px;
+   color: rgb(255,255,255) !important;
+   opacity: 0.85;
+}
+  
+.footer-basic .social > a:hover {
+   opacity: 0.95;
+}
+  
+.footer-basic .copyright {
+   margin-top: 5px;
+   text-align: center;
+   font-size: 13px;
+   color: rgb(255,255,255) !important;
+   margin-bottom: 15;
+}
+
 
 /*---- Content Page ----*/
 
@@ -83,19 +125,33 @@ body {
 }
 
 .card-descrip {
-    width: 250px;
+    width: 230px;
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;  
   }
+
+.img-fluid {
+    width: 256px;
+    height: 144px;
+} 
+
+.img-responsive {
+    max-width: 256px;
+}
+
+.title {
+    color: 	rgb(255,255,255) !important;
+}
 
 
 /*---- video-player ----*/
 
 .video-player {
     background-color: rgb(238, 238, 241);
-    border-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     padding: 10px;
 }
 
@@ -107,10 +163,44 @@ body {
   }
 
 .sim-vids {
-    color: rgb(238, 238, 241);
+    background-color: rgb(238, 238, 241);
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: 	black !important;
+}
+
+.border-bottom {
+    border-width:3px !important;
+}
+
+.crispy-comment {
+    background-color: rgb(238, 238, 241);
+    padding: 25px;
+    border-radius: 5px;
+    color: 	black !important;
 }
 
 
+
 /*---- Media Quires ----*/
+
+
+@media  (max-width: 550px) {
+    .video-player {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+    }
+ 
+  }
+
+@media  (max-width: 400px) {
+    .navbar-brand {
+      font-size: x-large
+    }
+
+    .navbar-toggler {
+        font-size: large
+    }  
+  }
 
 

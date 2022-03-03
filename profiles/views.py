@@ -5,11 +5,16 @@ from .models import Profile
 from videos.models import Video
 
 
+# Profile View
+# gets the profile of returns a 404 error if the profile is not found identified by its primary key
+# gets all the videos posted by this user where the uploader equals the primary key
+
+
 class ProfileView(View):
 
     def get(self, request, pk, *args, **kwargs):
         profile = get_object_or_404(Profile, pk=pk)
-        videos = Video.objects.all().filter(uploader=pk).order_by('-date_posted')
+        videos = Video.objects.filter(uploader=request.user).order_by('-date_posted')  # gets all the video objects and filters it by uploader and orders it by newest videos first
 
         context = {
             'profile': profile,
@@ -17,6 +22,10 @@ class ProfileView(View):
         }
 
         return render(request, 'profiles/profile.html', context)
+
+
+# Update profile class
+# Form validater that uploads a default image if the user chooses not to upload a profile image
 
 
 class UpdateProfile(UpdateView):

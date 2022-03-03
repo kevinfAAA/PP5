@@ -5,13 +5,19 @@ from django.views.generic.list import ListView
 from django.views import View
 from .models import Video, Comment, Category
 from .forms import CommentForm
-from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, UserPassesTestMixin  # Mixins are used to restrict access to non logged in users
+
+
+# Class based view to view all video content that's odered by date posted
 
 
 class Index(ListView):
     model = Video
     template_name = 'videos/index.html'
     order_by = '-date_posted'
+
+#  Create video class that uploads video and passes it into the detail video view
+#  The create video class also has a form validator that validates that the uploader of the video is the current logged in user
 
 
 class CreateVideo(LoginRequiredMixin, CreateView):
@@ -27,13 +33,19 @@ class CreateVideo(LoginRequiredMixin, CreateView):
         return reverse('video-detail', kwargs={'pk': self.object.pk})
 
 
+#  Detail video class that receives video from create video class
+#  Get function retreives the video and comment form and shows similar videos
+#  Post function allows the user to post a comment through the comment form on the video
+#  The context is the variables that are being passed to the html template
+
+
 class DetailVideo(View):
     def get(self, request, pk, *args, **kwargs):
         video = Video.objects.get(pk=pk)
 
         form = CommentForm()
         comments = Comment.objects.filter(video=video).order_by('-created_on')
-        categories = Video.objects.filter(category=video.category)[:15]
+        categories = Video.objects.filter(category=video.category)[:4]
 
 
         context = {
@@ -54,10 +66,10 @@ class DetailVideo(View):
                 comment=form.cleaned_data['comment'],
                 video=video
             )
-            comment.save()
+            comment.save()  # saves comment to the database
 
         comments = Comment.objects.filter(video=video).order_by('-created_on')
-        categories = Video.objects.filter(category=video.category)[:15]
+        categories = Video.objects.filter(category=video.category)[:4]
 
 
         context = {
@@ -67,6 +79,11 @@ class DetailVideo(View):
             'form': form
         }
         return render(request, 'videos/detail_video.html', context)
+
+
+# Update video class where the video information can edited and updated
+# User passes test mixin allows only the video uloader to edit or update the video
+# The test function returns a true or false on if the current user is also the video uploader
 
 
 class UpdateVideo(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
@@ -82,16 +99,20 @@ class UpdateVideo(LoginRequiredMixin, UserPassesTestMixin, UpdateView):
         return self.request.user == video.uploader
 
 
-class DeleteVideo(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
+# Delete video class where the video can be deleted from the application
+# User passes test mixin allows only the video uloader to delete the video
+
+
+class DeleteVideo(LoginRequiredMixin, DeleteView):
     model = Video
     template_name = 'videos/delete_video.html'
 
     def get_success_url(self):
         return reverse('index')
 
-    def test_func(self):
-        video = self.get_object()
-        return self.request.user == video.uploader
+
+#  Category class view where video can be seperated out into categories
+#  Get function retrieves the category and the videos in that category
 
 
 class VideoCategoryList(View):
@@ -103,4 +124,4 @@ class VideoCategoryList(View):
             'videos': videos
         }
 
-        return render(request, 'videos/video_category.html', context)       
+        return render(request, 'videos/video_category.html', context)

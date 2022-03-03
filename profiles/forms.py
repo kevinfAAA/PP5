@@ -1,6 +1,10 @@
 from django import forms
 from .models import Profile
 
+# Profile Form
+# Clean function allows the user to upload an image, if there's no image upload, a default image will be uploaded
+# Sign up function retrieves additional sign up info from the user
+
 
 class ProfileForm(forms.Form):
     name = forms.CharField(max_length=30, label='Name')

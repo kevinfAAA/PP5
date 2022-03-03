@@ -2,8 +2,8 @@
 {% load static %}
 {% load crispy_forms_tags %}
 
-
 {% block content %}
+ {% if request.user.is_authenticated %}
 	<div class="container">
 		<div class="row mt-5">
 			<div class="video-player col-md-8 col-sm-12 col-xs-12">
@@ -34,8 +34,8 @@
 				{% endif %}  
 			    </div>
 			</div>
-		    <div class="sim-vids col-md-4 col-sm-12 col-xs-12">
-			   <h3 class="text-center mb-3">Similar Videos</h3>
+		    <div class="sim-vids col-md-4 col-sm-12 col-xs-12 pt-2 d-none d-md-block">
+			   <h3 class="text-center mb-3"><u>Similar Videos</u></h3>
 			     {% for category in categories %}
 				 {% if object.pk != category.pk %}
 					<div class="position-relative d-flex flex-row mb-5 py-2 border-bottom">
@@ -49,27 +49,33 @@
 	    </div>
 		{% for comment in comments %}
 		<div class="row mt-3">
-			<div class="crispy col-md-8 col-sm-12 border-bottom">
-				<h5>{{ comment.user }} says:</h5>
-				<p>{{ comment.comment }}</p>
+			<div class="crispy-comment col-md-8 col-sm-12">
+				<h5 class="border-bottom">{{ comment.user }} says:</h5>
+				<p><u>{{ comment.comment }}</u></p>
 			</div>
 		</div>
 		{% endfor %}
 		<div class="row mt-3">
-			<div class="crispy col-md-8 col-sm-12">
-				{% if user.is_authenticated %}
+			<div class="crispy-comment col-md-8 col-sm-12">
 				<form method="POST">
 					{% csrf_token %}
 					<legend class="border-bottom mb-4">Leave a Comment!</legend>
 					{{ form | crispy }}
-					<button class="btn btn-outline-info btn-block">Post</button>
+					<button class="btn btn-info btn-block">Post</button>
 				</form>
-				{% else %}
-				<a class="btn btn-outline-info btn-block" href="{% url 'account_login' %}">Sign In To Post a Comment!</a>
-				{% endif %}
-			</div>
+			</div>	
 		</div>
-	
 	</div>
+ {% else %} 	
+ 	<div class="container">
+		<div class=" crispy d-flex justify-content-center mt-5">
+			<div class="text-center">
+	  			<h1>To view this video please sign up and register or login to your current subcription <i class="fas fa-video"></i></h1>
+	    		<a class="btn btn-info btn-lg" href="{% url 'account_signup' %}">Sign Up</a>
+	    		<a class="btn btn-info btn-lg" href="{% url 'account_login' %}">Login</i></a>
+  			</div>
+		</div>
+	</div>
+ {% endif %}  
 {% endblock %}
 

@@ -12,10 +12,17 @@
                 <legend class="border-bottom mb-4">Delete Video</legend>
                 <h5>Are You Sure?</h5>
                 <p>This will delete the video forever.  This cannot be undone.</p>
-                <button class="btn btn-outline-danger btn-block" type="submit">Delete</button>
+                <div class="text-center">
+                <button type="button" class="btn btn-primary btn-lg" onclick="goBack()">No Return</button>
+                <input type="submit" class="btn btn-danger btn-lg" value="Yes Delete" />
+                </div>
             </form>
         </div>
     </div>
 </div>
-
+<script>
+    function goBack() {
+      window.history.back()
+    }
+</script>
 {% endblock content %}
