@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'home',
     'videos',
     'profiles',
+    'subscriptions',
 ]
 
 MIDDLEWARE = [
@@ -94,11 +95,11 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_SIGNUP_EMAIL_ENTER_TWICE = False
 ACCOUNT_USERNAME_MIN_LENGTH = 4
 LOGIN_URL = '/accounts/login/'
-LOGIN_REDIRECT_URL = '/videos/'
+LOGIN_REDIRECT_URL = '/subscriptions/'
 
 # Additions to Sign Up Form
 ACCOUNT_SIGNUP_FORM_CLASS = 'profiles.forms.ProfileForm'
@@ -166,3 +167,9 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Stripe
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51KbRfGEkWCCSnBrHI8EQrSObM9vLKHKxhRq8q2pzPdOo2nhS8SMA9gY6OEMd6rSHjwmqg6gOpuXS1mfPndye3j6h00mreucren'
+STRIPE_SECRET_KEY = 'sk_test_51KbRfGEkWCCSnBrHoVSTa5IfMxkfzRemmyWnFNMQbVjn9XIejQ1edBCzqutU2D6M7qnHX3miAOXLxGoc30Ua8PvU00lg7Q7La4'
+STRIPE_PRICE_ID = 'price_1KdFF9EkWCCSnBrHxDKtNXyE'

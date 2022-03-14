@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+  <body>
+    <div class="container mb-5 mt-5">
+      <div class="row justify-content-center">
+          <div class="col-md-6 col-sm-12 col-xs-12 sub-stripe">
+            <h1>Continue to secure payment</h1>
+            <div class="text-center">
+            <button type="button" class="btn btn-primary btn-lg" onclick="goBack()">No Return</button>
+            <button type="submit" class="btn btn-success btn-lg" id="submitBtn">Pay and Subscribe</button>
+          </div>
+          </div>
+      </div>
+    </div>
+    <div class="testimonial-container">
+      <div class="testimonial-card">
+        <div class="card__body">
+          <h4><i class="fas fa-quote-left"> Great Content</i></h4>
+          <div class="row stars">
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          </div>
+          <p>I love Kevs Fitness World so much because it's geared towards everyone. Daily Burn is there to help you take your fitness to the next level, no matter what that level is.</p>
+        </div>
+        <div class="card__footer">
+          <div class="user">
+            <img src="/media/uploads/testimonial_pics/jane.jpg" alt="user__image" class="user__image">
+            <div class="user__info">
+              <h5>Jane Wright</h5>
+              <small>2h ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="card__body">
+          <h4><i class="fas fa-quote-left"> Changed My Life</i></h4>
+          <div class="row stars">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            </div>
+          <p>The weight loss is great, but having my health back is so much better. I always tell people that DB gave me my life back and that's 100% true.</p>
+        </div>
+        <div class="card__footer">
+          <div class="user">
+            <img src="/media/uploads/testimonial_pics/billy.jpg" alt="user__image" class="user__image">
+            <div class="user__info">
+              <h5>Billy Murphy</h5>
+              <small>Yesterday</small>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="card__body">
+          <h4><i class="fas fa-quote-left"> Why did'nt I join sooner</i></h4>
+          <div class="row stars">
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            </div>
+          <p>Im so happy I decided to press play on Kevs Fitness World. I've never been as consistent with exercise as I have in the last six months.</p>
+        </div>
+        <div class="card__footer">
+          <div class="user">
+            <img src="/media/uploads/testimonial_pics/john.jpg" alt="user__image" class="user__image">
+            <div class="user__info">
+              <h5>John Kent</h5>
+              <small>2d ago</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script>
+    function goBack() {
+      window.history.back()
+    }
+</script>
+{% endblock %}

@@ -26,4 +26,5 @@ urlpatterns = [
     path('videos/', video_views.Index.as_view(), name='index'),
     path('videos/', include('videos.urls')),
     path('profiles/', include('profiles.urls')),
+    path('subscriptions/', include('subscriptions.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
