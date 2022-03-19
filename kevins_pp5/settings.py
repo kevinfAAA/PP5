@@ -115,18 +115,19 @@ WSGI_APPLICATION = 'kevins_pp5.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
-DATABASES = {
-   'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
-}
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 
 
@@ -201,7 +202,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Stripe
 
-STRIPE_PUBLISHABLE_KEY = 'pk_test_51KbRfGEkWCCSnBrHI8EQrSObM9vLKHKxhRq8q2pzPdOo2nhS8SMA9gY6OEMd6rSHjwmqg6gOpuXS1mfPndye3j6h00mreucren'
-STRIPE_SECRET_KEY = 'sk_test_51KbRfGEkWCCSnBrHoVSTa5IfMxkfzRemmyWnFNMQbVjn9XIejQ1edBCzqutU2D6M7qnHX3miAOXLxGoc30Ua8PvU00lg7Q7La4'
-STRIPE_PRICE_ID = 'price_1KdFF9EkWCCSnBrHxDKtNXyE'
-STRIPE_ENDPOINT_SECRET = 'whsec_OelCefmD2u8x1iQLjF1VH0dHfWy1cime'
+STRIPE_PUBLISHABLE_KEY = os.environ.get('STRIPE_PUBLISHABLE_KEY')
+STRIPE_SECRET_KEY = os.environ.get('STRIPE_SECRET_KEY')
+STRIPE_PRICE_ID = os.environ.get('STRIPE_PRICE_ID')
+STRIPE_ENDPOINT_SECRET = os.environ.get('STRIPE_ENDPOINT_SECRET')
