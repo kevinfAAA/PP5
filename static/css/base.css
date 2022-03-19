@@ -66,7 +66,7 @@ body {
 .crispy {
     background-color: rgb(255,255,255, 0.8);
     padding: 25px;
-    border-radius: 25px
+    border-radius: 25px;
 }
 
 /* ------ Footer ------*/
@@ -187,7 +187,8 @@ body {
 .sub-stripe {
     background-color: rgb(255,255,255);
     padding: 25px;
-    border-radius: 25px
+    border-radius: 25px;
+    margin-top: 100px;  
 }
 
 
@@ -262,6 +263,12 @@ body {
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
     }
+
+    .sub-stripe {
+      padding: 15px;
+      border-radius: 0px;
+      margin-top: 0px;  
+  }
  
   }
 
