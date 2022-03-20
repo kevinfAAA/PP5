@@ -48,7 +48,7 @@ def stripe_config(request):
 @csrf_exempt
 def create_checkout_session(request):
     if request.method == 'GET':
-        domain_url = 'https://8000-kevinfaaa-pp5-1sz0o8xrchw.ws-eu34.gitpod.io/subscriptions/'
+        domain_url = 'https://kevspp5.herokuapp.com/subscriptions/'
         stripe.api_key = settings.STRIPE_SECRET_KEY
         try:
             checkout_session = stripe.checkout.Session.create(
