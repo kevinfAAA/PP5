@@ -12,7 +12,7 @@
 		<div class="row justify-content-center">
 			{% for object in object_list %}
 			<div class="card img-responsive">
-				<a href="{% url 'video-detail' object.pk %}"><img class="img-fluid" src="/media/{{ object.thumbnail }}" width="256" height="144"></a>
+				<a href="{% url 'video-detail' object.pk %}"><img class="img-fluid" src="{{ MEDIA_URL }}{{ object.thumbnail }}" width="256" height="144"></a>
 				<div class="card-body">
 					<a class="link-text" href="{% url 'video-detail' object.pk %}"><h5 class="text-center">{{ object.title }}</h5></a>
 					<p class="info-text card-descrip"><strong>Description: </strong>{{ object.description }}</p>

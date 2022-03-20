@@ -11,7 +11,7 @@
         <div class="row justify-content-center">
             {% for video in videos %}
             <div class="card img-responsive">
-                <a href="{% url 'video-detail' video.pk %}"><img class="img-fluid" src="/media/{{ video.thumbnail }}" width="256" height="144"></a>
+                <a href="{% url 'video-detail' video.pk %}"><img class="img-fluid" src="{{ MEDIA_URL }}{{ video.thumbnail }}" width="256" height="144"></a>
                 <div class="card-body">
                     <a class="link-text" href="{% url 'video-detail' video.pk %}"><h5 class="text-center">{{ video.title }}</h5></a>
                     <p class="info-text card-descrip"><strong>Description: </strong>{{ video.description }}</p>

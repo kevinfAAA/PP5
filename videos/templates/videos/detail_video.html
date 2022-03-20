@@ -12,7 +12,7 @@
 					height="405"
 					controls
 					data-setup='{"playbackRates": [0.5, 1, 1.5, 2], "fluid": true}'>
-					<source src="/media/{{ object.video_file }}" type="video/mp4">
+					<source src="{{ MEDIA_URL }}{{ object.video_file }}" type="video/mp4">
 					<p class="vjs-no-js">
 					To view this video please enable Javascript, and consider upgrading to a web browser that <a href="https://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
 					</p>
