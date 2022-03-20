@@ -1,1 +1,1 @@
-web: gunicorn kevins_pp5.wisgi:application
+web: gunicorn kevins_pp5.wsgi:application
