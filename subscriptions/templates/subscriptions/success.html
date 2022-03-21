@@ -4,7 +4,7 @@
 {% block content %}
   <body>
     <div class="container mb-5 mt-5">
-      {% if subscription.status == "active" %}
+      {% if payment_intent.status == "succeeded" %}
       <div class="row justify-content-center">
           <div class="col-md-6 col-sm-12 col-xs-12 sub-stripe text-center">
             <h1>You have successfully subscribed to Kevs Fitness World</h1>
