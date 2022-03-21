@@ -9,7 +9,7 @@ from subscriptions.models import StripeCustomer
 
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'subscriptions/home.html')
 
 
 def success(request):
@@ -30,7 +30,7 @@ def success(request):
         })
 
     except StripeCustomer.DoesNotExist:
-        return render(request, 'home.html')
+        return render(request, 'subscriptions/home.html')
     return render(request, 'subscriptions/cancel.html')
 
 
