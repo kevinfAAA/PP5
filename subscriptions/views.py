@@ -24,14 +24,14 @@ def success(request):
         # https://stripe.com/docs/api/subscriptions/object
         # https://stripe.com/docs/api/products/object
 
-        return render(request, 'subscriptions/success.html', {
+        return render(request, 'success.html', {
             'subscription': subscription,
             'product': product,
         })
 
     except StripeCustomer.DoesNotExist:
-        return render(request, 'subscriptions/home.html')
-    return render(request, 'subscriptions/cancel.html')
+        return render(request, 'home.html')
+    return render(request, 'cancel.html')
 
 
 def cancel(request):
@@ -49,7 +49,7 @@ def stripe_config(request):
 @csrf_exempt
 def create_checkout_session(request):
     if request.method == 'GET':
-        domain_url = 'https://kevspp5.herokuapp.com/subscriptions/success/'
+        domain_url = 'https://kevspp5.herokuapp.com/subscriptions/'
         stripe.api_key = settings.STRIPE_SECRET_KEY
         try:
             checkout_session = stripe.checkout.Session.create(
