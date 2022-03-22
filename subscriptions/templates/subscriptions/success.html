@@ -4,7 +4,6 @@
 {% block content %}
   <body>
     <div class="container mb-5 mt-5">
-      {% if subscription.status == "active" %}
       <div class="row justify-content-center">
           <div class="col-md-6 col-sm-12 col-xs-12 sub-stripe text-center">
             <h1>You have successfully subscribed to Kevs Fitness World</h1>
@@ -13,23 +12,6 @@
           </div>
           </div>
       </div>
-      {% else %}
-      <div class="container mb-5 mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6 col-sm-12 col-xs-12 sub-stripe text-center">
-              <h1>Subscription Cancelled.</h1>
-              <form method="post" action="{% url 'account_logout' %}">
-                {% csrf_token %}
-                {% if redirect_field_value %}
-                <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
-                {% endif %}
-                <button class="btn btn-success btn-lg" type="submit">{% trans 'HomePage' %}</button>
-              </form>
-            </div>
-            </div>
-        </div>
-      </div>
-      {% endif %}
     </div>
   </body>
 {% endblock %}
