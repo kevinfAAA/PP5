@@ -3,7 +3,7 @@
 
 {% block content %}
   <body>
-    {% if subscription.status == "active" %} 
+    {% if invoice.paid == "true" %} 
     <div class="container mb-5 mt-5">
       <div class="row justify-content-center">
           <div class="col-md-6 col-sm-12 col-xs-12 sub-stripe text-center">
