@@ -9,10 +9,6 @@ from subscriptions.models import StripeCustomer
 
 
 def home(request):
-    return render(request, 'subscriptions/home.html')
-
-
-def success(request):
     try:
         # Retrieve the subscription & product
         stripe_customer = StripeCustomer.objects.get(user=request.user)
@@ -24,14 +20,17 @@ def success(request):
         # https://stripe.com/docs/api/subscriptions/object
         # https://stripe.com/docs/api/products/object
 
-        return render(request, 'success.html', {
+        return render(request, 'subscriptions/home.html', {
             'subscription': subscription,
             'product': product,
         })
 
     except StripeCustomer.DoesNotExist:
-        return render(request, 'home.html')
-    return render(request, 'cancel.html')
+        return render(request, 'subscriptions/home.html')
+
+
+def success(request):
+    return render(request, 'subscriptions/success.html')
 
 
 def cancel(request):
