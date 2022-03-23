@@ -114,12 +114,12 @@ def stripe_webhook(request):
 
 def cancel_sub(request):
     if request.user.is_authenticated:
-        sub_id = request.user.subscription.id
+        client_reference_id = request.user.id
 
     stripe.api_key = settings.STRIPE_SECRET_KEY
 
     try:
-        stripe.Subscription.delete(sub_id)
+        stripe.Subscription.delete(client_reference_id)
     except Exception as e:
         return JsonResponse({'error': (e.args[0])}, status=403)
 
