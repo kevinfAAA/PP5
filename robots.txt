@@ -1,0 +1,3 @@
+user-agent: *
+Disallow: /subscriptions/
+Sitemap: https://kevspp5.herokuapp.com/sitemap.xml
