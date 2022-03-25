@@ -47,7 +47,6 @@ class DetailVideo(View):
         comments = Comment.objects.filter(video=video).order_by('-created_on')
         categories = Video.objects.filter(category=video.category)[:4]
 
-
         context = {
             'object': video,
             'comments': comments,
@@ -70,7 +69,6 @@ class DetailVideo(View):
 
         comments = Comment.objects.filter(video=video).order_by('-created_on')
         categories = Video.objects.filter(category=video.category)[:4]
-
 
         context = {
             'object': video,

@@ -124,3 +124,4 @@ def cancel_sub(request):
         return JsonResponse({'error': (e.args[0])}, status=403)
 
     return render(request, 'subscriptions/home.html')
+    

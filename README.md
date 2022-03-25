@@ -1,108 +1,479 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Kevs Fitness World
 
-Welcome kevinfAAA,
+## Description: Code Institute Student Project Portfolio 5: E-commerce Applications  
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+A fitness subscription application where a user sign up, view and comment on videocontent and upload there own videos. 
+<br>
+It showcases my ability to use the Python Django Framework, implementing CRUD Funtionality, Amazon Web Services and Stripe payments.
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+The deployed web application can be found [here](https://kevspp5.herokuapp.com/).
 
-## Gitpod Reminders
+# Table of Contents
+- [1. Introduction](#introduction)
+- [2. How to use](#How-to-use)
+- [3. Frameworks and Technologies](#Frameworks-and-Technologies)
+- [4. Testing](#testing)
+- [5. Bugs](#bugs)
+- [6. Future Updates](#future-updates)
+- [7. Contribution Links](#contribution-links)
+- [8. Deployment](#deployment)
+- [9. Wireframes](#wireframes)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
 
-`python3 -m http.server`
 
-A blue button should appear to click: _Make Public_,
+<a name="introduction"></a>
 
-Another blue button should appear to click: _Open Browser_.
+# 1. Introduction
+[Go to the top](#table-of-contents)
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+This is my final project portfolio required in the Full-Stack Software Development Diploma I am currently undertaking. It demonstrates the core skills and learnings I've taken from my experience throughtout the course. it's a subscription service using the Django Framework Django which is a Python-based free and open-source web framework, it follows the model–template–views architectural pattern and incoparates Stripe Payments.
+<br>
+The aim of the project to create a Fitness video sharing application.
+The website will allow the user to register and make a recurring monthly payment via stripe payments and access the video content.
+The user will be able to watch and comment on all video content.
+The user will be able to upload and share there own video content.
+The user will be able to cancel there subscription at any time.
 
-A blue button should appear to click: _Make Public_,
+## Purpose
 
-Another blue button should appear to click: _Open Browser_.
+### Workout Videos are Convenient For You as a Trainer 
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+Workout videos can help you reach your clients much more efficiently and give them the information they need. With one video conducting a workout, you will be able to share that with all of your clients and not need to instruct each individual client. 
 
-To log into the Heroku toolbelt CLI:
+### Workout Videos for Content Marketing
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
+Trainers and coaches have the hardest time setting themselves apart from their competition. Creating workout videos to post to social media and other platforms is a very effective way of exemplifying your coaching ability to potential clients. This also establishes credibility with them right off the bat showing them that you know exactly what you’re talking about. Therefore, you will already have an advantage over your competition.
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+### Repurpose Videos
 
-------
+Video clips hold a great deal of value as you stock up on them. Often, when creating new videos, its time consuming to start from scratch. As you create more workout video content, you can reference them in new videos and piece together elements from others.
 
-## Release History
+### Reach More Clients More Often
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+By creating workout videos, you can reach more clients, more often with the time you save on repeated instruction. Your time as a trainer is extremely valuable. Any way that you can save time creates more opportunity for you to reach new clients or spend more time with others who need it.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+<a name="How-to-use"></a>
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+# 2. How to use
+[Go to the top](#table-of-contents)
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+When the user first opens the web application they will be able to view:
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+1. The landing page
+2. The content pages
+3. The login page
+4. The register page
+5. Stripe payment page
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+The user will need to sign up and pay a monthly subscription to view:
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+1. The detail-video page
+2. The create-video page
+3. The user profile page
+4. The logout page
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+## Walk Through
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+The following walkthrough with images shows the web application functionality:
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+### Unregistered Users
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+#### Landing Page
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+![Landing page](media/readme_pics/landingpage.JPG)
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+When the user first opens the web application they are greeted with a landing image and a navbar.
+<br>
+The landing page asks the user to browse the video content and also to sign up today.
+<br>
+The navbar allows the user to browse the video content and also to sign up if they wish.
+<br>
+The footer has links to social media pages.
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+### Content Page
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+![Content page](media/readme_pics/contentpage.JPG)
 
-------
+The content page allows the user to browse the content, this page includes important info about the content such as:
 
-## FAQ about the uptime script
+1. Video Name
+2. A description of the video
+3. Who uploaded the video
+4. When was the video uploaded
 
-**Why have you added this script?**
+If the user click on one of the video cards they will be asked to sign up
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+![Please sign page](media/readme_pics/pleasesignup.JPG)
 
-**How will this affect me?**
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+#### Sign Up
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+![Sign Up page](media/readme_pics/signup.JPG)
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+The Sign Up page is a form that requests the following details:
 
-**So….?**
+1. E-mail address
+2. username
+3. name
+4. location
+5. Image
+6. Password
+7. Password confirmation
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+Once the user provides these details, they will be asked to pay and subscribe via STripe payments
 
-**Can I opt out?**
+#### Login
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+![Login page](media/readme_pics/signin.JPG)
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+The login page is a form that requests the following details:
 
-**Anything more?**
+1. Username or E-mail address
+2. Password
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+Onces the user provides these details, they can then access the web application.
+<br>
+If the user accesses the login page that has not already registered there is a link to the sign up page.
 
----
+#### Stripe Payment Page
 
-Happy coding!
+![Pay and Subscribe page](media/readme_pics/payandsubscribe.JPG)
+
+Once the user sumbits there sign details, they are asked to pay and subscribe which brings them to stripe payments page:
+
+![Stripe page](media/readme_pics/stripepage.JPG)
+
+On the stripe page the user has the ability to pay a recurring monthly fee of 15 euro to view the video content or cancel where the user will be directed back to the homepage
+
+![Stripe Subscription Cancelled page](media/readme_pics/subscriptionsuccess.JPG)
+![Stripe Subscription Success page](media/readme_pics/subscriptioncancelled.JPG)
+
+
+### Registered Users
+
+![Registered Landing page](media/readme_pics/reglandingpage.JPG)
+
+#### Landing Page
+
+When the user logs in to the web application they are greeted with a landing image and a navbar.
+<br>
+The landing page asks the user to browse the video content.
+<br>
+The navbar allows the user to browse the video content and also to view there profile.
+<br>
+The footer has links to social media pages.
+
+#### The detail-video page
+
+![Detail video page](media/readme_pics/detailvideo.JPG)
+
+The detail video page is where the user can watch the video content.
+<br>
+This pages details the when the video was uploaded and gives a description of what video.
+<br>
+there is also a similar videos section when shows additional videos that are in this category.
+<br>
+There is also a leave a comment section where the user can post a comment and view other users comments.
+<br>
+Please note that foe this project all videos are the same, the video used is for demonstration purposes only. 
+
+#### The create-video page
+
+![Create video page](media/readme_pics/createvideo.JPG)
+
+The create video page allows the user upload their own video content.
+<br>
+The following details is required by the user to successfully upload a video:
+1. Title
+2. Description
+3. Video file (mp4)
+4. Thumbnail (png, jpeg, jpg)
+5. Category
+
+#### The User Profile Page
+
+![User Profile page](media/readme_pics/profilepage.JPG)
+
+When the user inputs there sign up details, this information is also used to create a profile for the user.
+<br>
+The user profile page consists of the user information details.
+<br>
+The user profile page gives the user the ability to edit their profile, upload video content.
+<br>
+The user profile page allows the user to cancel their subscription if they wish.
+
+#### Logout
+
+![Logout page](media/readme_pics/signout.JPG)
+
+The logout page allows the user to logout. 
+
+# 3. Frameworks and Technologies
+[Go to the top](#table-of-contents)
+
+## Django
+
+![Django Framework Diagram](media/readme_pics/Image11.jpg)
+
+This web application was created using the Django Framework.
+<br>
+Django is a Python-based free and open-source web application framework for the backend development of web applications and websites.
+<br>
+It follows the Model View Template (MVT) architectural pattern. It separates the code into three distinct parts – Model, View and Templates. The developers just have to code what should be displayed to the user and Django will take care of all the background details.
+<br>
+It is maintained by the Django Software Foundation, the primary goal of Django is to ease the creation of complex, database-driven websites. 
+<br>
+The Python web framework Django emphasizes the following core areas:
+
+- Reusability 
+- Pluggability of components
+- Less code
+- Low coupling
+- Rapid development
+
+## Django Allauth
+
+Django Allauth is an integrated set of Django applications addressing authentication, registration, account management as well as 3rd party (social) account authentication.
+<br>
+
+- It supports multiple authentication schemes (e.g. login by user name, or by e-mail), as well as multiple strategies for account verification (ranging from none to e-mail verification).
+- All access tokens are consistently stored so that you can publish wall updates etc.
+
+## Stripe Payments
+
+Sripe allows the product owner to accept payments from customers around the world in minutes. The Stripe platform is designed to increase conversion at every step of the payment flow – from optimised checkout flows and fraud prevention to issuer-level optimisations.
+<br>
+Stripe’s hosted payments page provides an optimised checkout experience for customers. It reduces friction, supports relevant global payment methods, and adapts to your customer's language and device.
+<br>
+We can also build a fully customised experience and simplify PCI compliance using our flexible integration options.
+<br>
+By optimising the design of the checkout page alone, e-commerce businesses increased conversion by an average of 35%. Stripe recently analysed payment forms of the top 100 e-commerce stores in the UK to identify important tactics for optimising checkout.
+
+## Amazon Web Services
+
+AWS (Amazon Web Services) is a comprehensive, evolving cloud computing platform provided by Amazon that includes a mixture of infrastructure as a service (IaaS), platform as a service (PaaS) and packaged software as a service (SaaS) offerings. AWS services can offer an organization tools such as compute power, database storage and content delivery services.
+<br>
+AWS launched in 2006 from the internal infrastructure that Amazon.com built to handle its online retail operations. AWS was one of the first companies to introduce a pay-as-you-go cloud computing model that scales to provide users with compute, storage or throughput as needed.
+<br>
+AWS offers many different tools and solutions for enterprises and software developers that can be used in data centers in up to 190 countries. Groups such as government agencies, education institutions, nonprofits and private organizations can use AWS services.
+
+# 4. Testing
+[Go to the top](#table-of-contents)
+
+## Google Develop Tools
+Google Developer Tools is used test bug fixes on the fly.
+<br>
+Google Developer Tools was really important when making the website responsive. 
+<br>
+The website application is responsive on the follwoing devices:
+- Widescreen desktop.
+- Laptop.
+- Ipad.
+- Mobile Phone (iPhone SE).
+
+##	The W3C Markup validation Service
+
+I used [W3C Markup Validator](https://validator.w3.org/#validate_by_input+with_options) to check for any errors within my HTML pages.
+
+##	The W3C CSS validation Service
+
+I used [W3C CSS Validator](https://jigsaw.w3.org/css-validator/#validate_by_input) to check for any errors within my CSS page.
+
+## PEP8 Validation Testing 
+
+I used the [PEP8 online](http://pep8online.com/) validator to check my python code for errors.
+
+##	Manual Testing
+
+### Unregistered Users
+
+#### Landing Page
+##### Navigation Bar
+###### Kevs Fitness World
+- When “Kevs Fitness World” is left clicked with the mouse, the browser sends the user to the Landing page. It worked as expected.
+###### Browse All Content
+- When “Browse All Content” is left clicked with the mouse, the browser sends the user to the all content page. It worked as expected.
+###### Workout dropdown
+- When any tab in the “Workout dropdown” is left clicked with the mouse, the browser sends the user to that category content page. It worked as expected.
+###### Sign Up
+- When “Sign Up” is left clicked with the mouse, the browser sends the user to the Sign Up page. It worked as expected.
+###### Login 
+- When “Login” is left clicked with the mouse, the browser sends the user to the Login page. It worked as expected.
+###### Check Out Our Classes 
+- When “Check Out Our Classes” is left clicked with the mouse, the browser sends the user to the all content page. It worked as expected.
+###### Sign Up Today 
+- When “Sign Up Today ” is left clicked with the mouse, the browser sends the user to the Sign Up page. It worked as expected.
+
+##### Footer
+###### You Tube Icon
+- When the “You Tube Icon” is left clicked with the mouse, the browser sends the user to the You Tube page. It worked as expected.
+###### Facebook Icon
+- When the “Facebook Icon” is left clicked with the mouse, the browser sends the user to the Kevs Fitness World Facebook page. It worked as expected.
+###### Instagram Icon 
+- When “Instagram Icon” is left clicked with the mouse, the browser sends the user to the Instagram page. It worked as expected.
+###### Instagram Icon 
+- When “Instagram Icon” is left clicked with the mouse, the browser sends the user to the Instagram page. It worked as expected.
+
+#### Content Page
+- When a video card is left clicked with the mouse, the browser sends the user to the please sign up or login page. It worked as expected.
+
+### Logged in Users
+
+#### Content Page
+###### video card
+- When a video card is left clicked with the mouse, the browser sends the user to the video detail page. It worked as expected.
+
+#### detail page
+###### Play Video Button
+- When the play video button is left clicked with the mouse, the video plays. It worked as expected.
+###### Similar Videos
+- When any of the similar videos is left clicked with the mouse, the user is directed to that video detail page. It worked as expected.
+###### Leave a Comment
+- When the user writes a comment and left click onthe post button, the comment is posted on the video detail page. It worked as expected
+
+#### User Profile page
+###### Edit Profile 
+- When “Edit Profile” is left clicked with the mouse, the browser sends the user to the update profile page. It worked as expected.
+###### Upload a Video 
+- When “Upload a Video” is left clicked with the mouse, the browser sends the user to the update create video page. It worked as expected.
+###### Cancel Subscription
+- When “Cancel Subscription” is left clicked with the mouse, the subscription to Kevs Fitness World is canceled and the user is directed to the homepage. It worked as expected.
+
+#### Update Profile page
+- The user can update the following profile attributes:
+1. Name
+2. Location
+3. Image
+
+It worked as expected.
+
+#### Upload Video page
+- The user can upload a video by submitting the following details:
+1. Title
+2. Description
+3. Video file (mp4)
+4. Thumbnail (png, jpeg, jpg)
+5. Category
+
+It worked as expected.
+
+### The user has the ability to edit there uploaded video, it works as expected.
+
+### The user has the ability to delete there uploaded video, it works as expected.
+
+### The user only has the ability to edit/delete there own video content, it works as expected.
+
+## Super Users
+
+### A super user has the ability upload a video, it works as expected.
+### A super user has ability to edit any video uploaded, it works as expected.
+### A super user has the ability to delete any video uploaded, it works as expected.
+### A super does not have a user profile.
+
+### Stripe Payments
+
+###### Pay and Subscribe page
+- When “Pay and Subscribe” is left clicked with the mouse, the user is directed to the Stripe payments page. It worked as expected.
+###### Stripe Payments page
+- When “Cancel” is left clicked with the mouse, the browser sends the user to the cancel page. It worked as expected.
+- when a user enters there credit card details and submits a recurring payment, and the payment is successful, the user is directed to the success page. It worked as expected.
+- On the success page when "Continue to site" is left clicked the user is directed to the homepage. It worked as expected.
+
+# 5.	Bugs
+
+[Go to the top](#table-of-contents)
+
+1. When I deployed my project to heroku, I setup an amazon web services account to store my media and ststic files.
+<br>
+Once setup the the static files were rendering on my application as expected but the media file were not.
+<br>
+
+- Fix: I was using the wrong src directory, once updated with {{ MEDIA _URL }} the issue was resolved.
+
+2. When deploying my project to Heroku I was receiving an application error stating "IP address mismatch" when trying to view the application.
+
+- Fix: There was an error in my Procfile, once the Profile was updated, the issue was resolved.
+
+3. When Adding the stripe payment to my application during testing I kept receiving an error 500.
+
+- Fix: There was an error in the domain url in the create_checkout_session view, once the create_checkout_session view was updated, the issue was resolved.
+
+# 6. Future Updates
+[Go to the top](#table-of-contents)
+
+1. Make the application more secure, there is period where the user has registered for the application but has not made their payment, if they cancel the payment and login into the application with the sign up details they submitted they will be able to use the application for free.
+
+<a name="contribution-links"></a>
+
+# 7.	Contribution Links
+
+[Go to the top](#table-of-contents)
+
+- [Django](https://www.djangoproject.com/)
+- [Font Awesome Icons](https://fontawesome.com/v4.7/icons/)
+- [Bootstrap](https://getbootstrap.com/)
+- [Heroku](https://www.heroku.com/)
+- [Postgresql](https://www.postgresql.org/)
+- [Django-Allauth](https://django-allauth.readthedocs.io/en/latest/overview.html)
+- [MDN Web Docs](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input)
+- [W3schools](https://www.w3schools.com/cssref/pr_text_text-align.asp)
+- [Google fonts](https://fonts.google.com/)
+- [Stack exchange](https://stackexchange.com/)
+- [Stack overflow](https://stackoverflow.com/)
+- [W3C Markup validation](https://validator.w3.org/#validate_by_input)
+- [W3C CSS validation](https://jigsaw.w3.org/css-validator/)
+- [Python Docs](https://www.python.org/)
+- [Python Tutor](http://www.pythontutor.com/visualize.html#mode=edit)
+- [PEP8 online](http://pep8online.com/)
+- [Amazon Web Services](https://aws.amazon.com/)
+- [Stripe Payments](https://stripe.com/ie)
+
+
+<a name="Deployment"></a>
+
+# 8.	Deployment to Heroku and AWS Storage
+
+[Go to the top](#table-of-contents)
+
+The following steps were used to to deploy this web application to Heroku and use Amazon Web Services to store the static and media files.
+
+## Steps
+
+1. Create a Heroku App
+2. Add a Heroku Postgres database via heroku resources
+3. Add your configuration variables and setup an env.py to store them gitpod
+4. Select Github as your deployment method and connect your github project to your Heroku app
+5. Deploy brench and and your application should to deploy to the world wide web.
+6. Once deployed create an amazon web services account.
+7. Using the amazon S3 service create a bucket and upload you meadia and static files.
+8. In your setting.py file in Github add "storages" to installed app.
+9. In your setting.py file in Github add your bucket configuration, cache control and your media and static urls.
+
+<a name="Wireframes"></a>
+
+# 8.	Wireframes
+
+[Go to the top](#table-of-contents)
+
+
+## Landing Page
+![Landing Page](media/wireframes/LandingPage.png)
+## Content Page
+![Content Page](media/wireframes/ContentPage.png)
+## Video Detail Page
+![Video Detail Page](media/wireframes/VideoDetailPage.png)
+## Profile Page
+![Profile Page](media/wireframes/ProfilePage.png)
+## iPad Landing Page
+![iPad Landing Page](media/wireframes/iPadLandingPage.png)
+## iPad Content Page
+![iPad Content Page](media/wireframes/iPadContentPage.png)
+## iPad Video Detail Page
+![iPad Video Detail Page](media/wireframes/iPadVideoDetailPage.png)
+## iPad Profile Page
+![iPad Profile Page](media/wireframes/iPadProfilePage.png)
+## Landing and Content Page
+![Landing and Content Page](media/wireframes/LandingandContentPage.png)
+## Video Detail and Profile Page
+![Video Detail and Profile Page](media/wireframes/VideoDetailandProfilePage.png)
+

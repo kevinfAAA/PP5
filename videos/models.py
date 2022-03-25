@@ -41,3 +41,4 @@ class Comment(models.Model):
 
     def __str__(self):
         return f'User: {self.user} | Created On: {self.created_on.strftime("%b %d %Y %I:%M %p")}'
+        
