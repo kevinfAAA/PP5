@@ -18,6 +18,8 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from videos import views as video_views
+from django.conf.urls import url
+from home.views import handler404
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -27,4 +29,8 @@ urlpatterns = [
     path('videos/', include('videos.urls')),
     path('profiles/', include('profiles.urls')),
     path('subscriptions/', include('subscriptions.urls')),
+    url(r'^$', handler404, name='handler404'), 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+handler404 = 'home.views.handler404'
