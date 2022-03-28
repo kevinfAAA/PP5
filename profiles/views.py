@@ -10,7 +10,7 @@ from django.contrib import messages
 
 
 # Profile View
-# gets the profile of returns a 404 error if the profile is not found identified by its primary key
+# gets the profile or returns a 404 error if the profile is not found identified by its primary key
 # gets all the videos posted by this user where the uploader equals the primary key
 
 
@@ -58,10 +58,9 @@ def newsletter_signup(request):
             instance.save()
             messages.warning(request, 'Your email has been submitted to the database', "alert alert-success alert-dismissable")
 
-
     context = {
         'form': form,
-    }          
+    }
     template = 'profiles/news_sign_up.html'
     return render(request, template, context)
 
@@ -74,16 +73,16 @@ def newsletter_unsubscribe(request):
         instance = form.save(commit=False)
         if NewsletterUser.objects.filter(email=instance.email).exists():
             NewsletterUser.objects.filter(email=instance.email).delete()
-            messages.warning(request, 
-            'Your email has been removed', 
+            messages.warning(request,
+            'Your email has been removed',
             "alert alert-success alert-dismissable")
         else:
-            messages.warning(request, 
-            'Your email is not in the database', 
+            messages.warning(request,
+            'Your email is not in the database',
             "alert alert-warning alert-dismissable")
 
     context = {
         'form': form,
-    }          
+    }
     template = 'profiles/news_unsubscribe.html'
     return render(request, template, context)
