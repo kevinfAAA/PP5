@@ -3,6 +3,10 @@ from django.views import View
 from django.views.generic.edit import UpdateView
 from .models import Profile
 from videos.models import Video
+from .models import NewsletterUser
+from .forms import NewsletterUserSignUpForm
+from django.contrib import messages
+
 
 
 # Profile View
@@ -40,3 +44,46 @@ class UpdateProfile(UpdateView):
 
     def get_success_url(self):
         return reverse('profile', kwargs={'pk': self.object.pk})
+
+
+# Subscribe view
+def newsletter_signup(request):
+    form = NewsletterUserSignUpForm(request.POST or None)
+
+    if form.is_valid():
+        instance = form.save(commit=False)
+        if NewsletterUser.objects.filter(email=instance.email).exists():
+            messages.warning(request, 'Your email already exists in our database', "alert alert-warning alert-dismissable")
+        else:
+            instance.save()
+            messages.warning(request, 'Your email has been submitted to the database', "alert alert-success alert-dismissable")
+
+
+    context = {
+        'form': form,
+    }          
+    template = 'profiles/news_sign_up.html'
+    return render(request, template, context)
+
+
+# Unsubscribe view
+def newsletter_unsubscribe(request):
+    form = NewsletterUserSignUpForm(request.POST or None)
+
+    if form.is_valid():
+        instance = form.save(commit=False)
+        if NewsletterUser.objects.filter(email=instance.email).exists():
+            NewsletterUser.objects.filter(email=instance.email).delete()
+            messages.warning(request, 
+            'Your email has been removed', 
+            "alert alert-success alert-dismissable")
+        else:
+            messages.warning(request, 
+            'Your email is not in the database', 
+            "alert alert-warning alert-dismissable")
+
+    context = {
+        'form': form,
+    }          
+    template = 'profiles/news_unsubscribe.html'
+    return render(request, template, context)

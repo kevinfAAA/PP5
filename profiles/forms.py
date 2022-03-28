@@ -1,5 +1,7 @@
 from django import forms
 from .models import Profile
+from .models import NewsletterUser
+from crispy_forms.helper import FormHelper
 
 # Profile Form
 # Clean function allows the user to upload an image, if there's no image upload, a default image will be uploaded
@@ -25,3 +27,20 @@ class ProfileForm(forms.Form):
         profile.location = self.cleaned_data['location']
         profile.image = self.cleaned_data['image']
         profile.save()
+
+
+# Newsletter Sign up form
+
+
+class NewsletterUserSignUpForm(forms.ModelForm):
+    helper = FormHelper()
+    helper.form_show_labels = False
+
+    class Meta:
+        model = NewsletterUser
+        fields = ['email']
+
+        def clean_email(self):
+            email = self.cleaned_data.get('email')
+
+            return email

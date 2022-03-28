@@ -29,7 +29,7 @@ urlpatterns = [
     path('videos/', include('videos.urls')),
     path('profiles/', include('profiles.urls')),
     path('subscriptions/', include('subscriptions.urls')),
-    url(r'^$', handler404, name='handler404'), 
+    url(r'^$', handler404, name='handler404'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

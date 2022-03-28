@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% crispy form form.helper %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center mt-5">
+        <div class="card col-md-6 col-sm-12 col-xs-12 p-3 shadow">
+            <h3 class="text-center">Enter your email to Sign Up to Kevs Fitness World NewsLetter</h3>
+            {% if messages %}
+                {% for message in messages %}
+                    <div {% if message.tags %} class="{{message.tags}}" {% endif %} role="alert">
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            {% else %}
+            <form method="POST">
+                {% csrf_token %}
+                <div class="input-group justify-content-center">
+                    {% crispy form %}
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit">Subscribe</button>
+                    </span>
+                </div>
+            </form>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

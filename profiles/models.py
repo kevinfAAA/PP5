@@ -13,3 +13,14 @@ class Profile(models.Model):
 
     def __str__(self):
         return f'{self.user.username} Profile'
+
+
+# newsletter model
+
+
+class NewsletterUser(models.Model):
+    email = models.EmailField()
+    date_added = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.email
