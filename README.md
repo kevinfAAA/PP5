@@ -18,6 +18,7 @@ The deployed web application can be found [here](https://kevspp5.herokuapp.com/)
 - [7. Contribution Links](#contribution-links)
 - [8. Deployment](#deployment)
 - [9. Wireframes](#wireframes)
+- [9. E-commerce business model](#e-commerce-business-model)
 
 
 
@@ -200,7 +201,14 @@ The user profile page consists of the user information details.
 <br>
 The user profile page gives the user the ability to edit their profile, upload video content.
 <br>
+The user profile page gives the user the ability to sign up the Kevs Fitness World newsletter and to unsubscribe
+
+![Newsletter Sign Up page](media/readme_pics/newslettersignup.JPG)
+![Newsletter Unsubscribe page](media/readme_pics/newsletterunsubscribe.JPG)
+
 The user profile page allows the user to cancel their subscription if they wish.
+<br>
+When the user uploads a video, they can also be accessed from this page for quick access if the user wishes to edit or delete. 
 
 #### Logout
 
@@ -449,9 +457,9 @@ The following steps were used to to deploy this web application to Heroku and us
 8. In your setting.py file in Github add "storages" to installed app.
 9. In your setting.py file in Github add your bucket configuration, cache control and your media and static urls.
 
-<a name="Wireframes"></a>
+<a name="wireframes"></a>
 
-# 8.	Wireframes
+# 9.	Wireframes
 
 [Go to the top](#table-of-contents)
 
@@ -477,3 +485,67 @@ The following steps were used to to deploy this web application to Heroku and us
 ## Video Detail and Profile Page
 ![Video Detail and Profile Page](media/wireframes/VideoDetailandProfilePage.png)
 
+<a name="e-commerce-business-model"></a>
+
+# 9.	E-commerce business model
+
+[Go to the top](#table-of-contents)
+
+Fitness is one of the most popular genres of subscription networks. And as online fitness becomes more popular, consumers are increasingly expecting virtual fitness or fitness subscription video on demand (SVOD) as an option.
+<br>
+And why wouldn’t they? The ease of at-home fitness and availability of classes on-demand makes committing to a subscription plan worth it. According to Global Market Insights, online fitness programs will grow by 30% through 2026. 
+
+## Why create an online fitness program
+
+1. The staying power of digital-focused fitness
+
+Working out from home has always been a popular exercise option. From Jane Fonda VHS tapes to Peloton bikes, digitally-focused at-home fitness had established a growing and viable market even before COVID-19 restricted access to gyms and fitness studios.
+<br>
+Many popular fitness studios with previously-developed fitness subscription networks grew their audience base exponentially over the course of 2020. But before the pandemic, Vimeo OTT fitness channels had already proved their worth — with 206 minutes of content watched each month on average and an 89% retention rate.
+
+2. Many options for monetization
+
+There are many different ways to monetize your fitness videos online. From Instagram to pay-per-view to OTT channels, everyone from fitness influencers to franchised organizations can find ways to make money through online content.
+
+3. Your application, your content
+
+This is an obvious pro. By creating your online fitness program or OTT channel, you have the power to make the content you feel is missing from the industry or the content that is an extension of you.
+
+## Launching a fitness subscription application online
+
+While a fitness subscription network takes time and equipment to get off the ground, it is much more scalable than a strictly brick-and-mortar business model.
+<br>
+Often, factors like time and location can stop a consumer from joining you for an in-person class. By moving your content online, you eliminate those barriers and bring the content straight to your audience. 
+
+### I need to know my fitness audience
+
+Before I launch the online fitness program, I need to do market research to ensure that your target audience is out there. Through consistent uploads and outreach, I will reach more people and build relationships with my subscribers. 
+<br>
+Making content that speaks to my audience will result in consistent conversions and return customers
+
+### I want to scale my business
+
+A no-brainer. By beginning a fitness subscription business, I can achieve the type of growth that isn’t possible through only in-person options. Online classes have no size limits or time and location restrictions. Once I've developed and filmed the content, I can sit back and watch my business grow – that is, until I'm ready to film again.
+
+### I can focus on the content
+
+To build and keep a subscription base, I have to produce quality content. From speaking to others in the business, the content has become the mainstay of there business. If a fitness subscription is a step I'm going to take, I have to focus on the content as my business’s meat and potatoes.
+
+## How I plan on growing my subscriber base
+
+1. Promote content, not my brand
+
+When it comes to promoting my fitness subscription network, creative matters. Content ads generally convert customers 3-4x cheaper than brand ads. So it pays to show off the content I'm creating rather than the brand itself. 
+<br>
+Using video for my promotions will also pay off. As a video business, it stands to reason that video converts better.
+
+2. Invest in community
+
+Fitness doesn’t have to be an individual journey. I can bring my subscribers into something greater than simply taking a class by investing in the community. I plan on utilizing social media to create groups or a hashtag. Create a space in my newsletters for subscribers to share about their journey with the platform. This creates even more value around my brand and has been proven to increase overall customer lifetime value.
+
+3. Stay true to my brand
+
+Maintaining that balance between innovation and staying true to my core offering is easier said than done. But staying true to your brand builds trust with the audience, so they know what they’re coming back to time and time again.
+
+4. Create new content consistently
+Sellers with over 500 videos saw retention rates of 91% on average. That may seem like many videos now, but if I'm planning on going live frequently — those videos add up quickly. Consistent uploads are probably the #1 way to keep subscribers around.
