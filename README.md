@@ -344,8 +344,12 @@ I used the [PEP8 online](http://pep8online.com/) validator to check my python co
 - When “Edit Profile” is left clicked with the mouse, the browser sends the user to the update profile page. It worked as expected.
 ###### Upload a Video 
 - When “Upload a Video” is left clicked with the mouse, the browser sends the user to the update create video page. It worked as expected.
-###### Cancel Subscription
-- When “Cancel Subscription” is left clicked with the mouse, the subscription to Kevs Fitness World is canceled and the user is directed to the homepage. It worked as expected.
+###### Sign up to Kevs Fitness World Newsletter
+- When “Sign up to Kevs Fitness World Newsletter” is left clicked with the mouse, the browser sends the user to the Newsletter Sign Up page. It worked as expected.
+###### Unsubscribe to Kevs Fitness World Newsletter
+- When “Unsubscribe to Kevs Fitness World Newsletter” is left clicked with the mouse, the browser sends the user to the Newsletter Unsubscribe page. It worked as expected.
+###### Cancel Kevs Fitness World Subscription
+- When “Cancel Kevs Fitness World Subscription” is left clicked with the mouse, the subscription to Kevs Fitness World is canceled and the user is directed to the homepage. It worked as expected.
 
 #### Update Profile page
 - The user can update the following profile attributes:
@@ -481,7 +485,7 @@ The following steps were used to to deploy this web application to Heroku and us
 ## iPad Profile Page
 ![iPad Profile Page](media/wireframes/iPadProfilePage.png)
 ## Landing and Content Page
-![Landing and Content Page](media/wireframes/LandingandContentPage.png)
+![Landing and Content Page](media/wireframes/LandingandContentPageoniPhone.png)
 ## Video Detail and Profile Page
 ![Video Detail and Profile Page](media/wireframes/VideoDetailandProfilePage.png)
 
@@ -548,4 +552,5 @@ Fitness doesn’t have to be an individual journey. I can bring my subscribers i
 Maintaining that balance between innovation and staying true to my core offering is easier said than done. But staying true to your brand builds trust with the audience, so they know what they’re coming back to time and time again.
 
 4. Create new content consistently
+
 Sellers with over 500 videos saw retention rates of 91% on average. That may seem like many videos now, but if I'm planning on going live frequently — those videos add up quickly. Consistent uploads are probably the #1 way to keep subscribers around.
